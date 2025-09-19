@@ -1,0 +1,338 @@
+<!-- ============================= -->
+<!-- FILE: work.html (Case Studies) -->
+<!-- ============================= -->
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Work — Case Studies | Bhens Enterprises Ltd</title>
+        <meta name="description" content="Selected projects from dashboards, Excel/VBA systems, AI automations, and web & mobile apps." />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Work — Case Studies | Bhens Enterprises" />
+        <meta property="og:description" content="Dashboards • Excel/VBA • AI & Automations • Web & Mobile" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/assets/img/og-banner.jpg" />
+        <meta property="og:url" content="https://bhens.enterprises/work.html" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- Plausible Analytics -->
+        <script defer data-domain="bhens.enterprises" src="https://plausible.io/js/script.js"></script>
+
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+        <link href="/assets/css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Header partial include -->
+        <div id="header-include"></div>
+
+        <main class="page-wrap">
+            <!-- Page Header -->
+            <header class="hero">
+                <div class="container">
+                    <div class="row align-items-center g-3">
+                        <div class="col-lg-9">
+                            <span class="badge badge-outline mb-3">Case Studies</span>
+                            <h1 class="display-6 fw-bold">Results over slides. Real projects, measurable outcomes.</h1>
+                            <p class="text-secondary lead">Here’s a selection of dashboards, Excel/VBA systems, AI automations, and apps we’ve shipped — with the specific problems they solved.</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Filters (static UI for now) -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="d-flex flex-wrap gap-2 align-items-center">
+                        <span class="small-muted">Filter:</span>
+                        <button class="btn btn-sm btn-outline-light" data-filter="all">All</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="dashboards">Dashboards</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="excel">Excel/VBA</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="apps">Web & Mobile</button>
+                        <button class="btn btn-sm btn-outline-light" data-filter="ai">AI & Automations</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grid of projects -->
+            <section class="section">
+                <div class="container">
+                    <div class="row g-3" id="workGrid">
+                        <!-- Card 1 -->
+                        <div class="col-md-6 col-lg-4" data-tags="dashboards">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/dashboard.png" class="card-img-top" alt="operations dashboard" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Operations Dashboard</h5>
+                                    <p class="text-secondary">Live KPIs for loadings and targets with Chart.js visualisations.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-tv" onclick="openCase('case-tv')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Request similar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-md-6 col-lg-4" data-tags="apps dashboards">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/stations.png" class="card-img-top" alt="Retail development map" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Retail Development Map</h5>
+                                    <p class="text-secondary">Geo‑mapping for stations/outlets with competitor overlays and performance metrics.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-rdm" onclick="openCase('case-rdm')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Request demo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-6 col-lg-4" data-tags="excel">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/excelimage.png" class="card-img-top" alt="Excel systems" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Excel Systems Suite</h5>
+                                    <p class="text-secondary">POS, rentals and automated reporting in robust Excel/VBA workbooks.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-excel" onclick="openCase('case-excel')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Get pricing</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="col-md-6 col-lg-4" data-tags="ai">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/aiimage.png" class="card-img-top" alt="AI assistant" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">AI Helpdesk Assistant</h5>
+                                    <p class="text-secondary">A GPT‑powered assistant answering FAQs and routing tickets to the right team.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-ai" onclick="openCase('case-ai')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Launch pilot</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="col-md-6 col-lg-4" data-tags="apps">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/phone.png" class="card-img-top" alt="Mobile app" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Mobile Apps</h5>
+                                    <p class="text-secondary">mobile applications that bring ideas to life and solve real-world challenges.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-field" onclick="openCase('case-field')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Discuss build</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="col-md-6 col-lg-4" data-tags="dashboards excel">
+                            <div class="card h-100 shadow-soft">
+                                <img src="/assets/img/excelpng.png" class="card-img-top" alt="Finance reporting" loading="lazy" />
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">Finance Reporting Pack</h5>
+                                    <p class="text-secondary">Automated month‑end pack from Excel to PDF with mail‑outs and approvals.</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <a class="btn btn-outline-light btn-sm" href="#case-fin" onclick="openCase('case-fin')">Read case</a>
+                                        <a class="btn btn-accent btn-sm" href="/contact.html#quote">Automate reports</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Case modal templates (static HTML shown via JS) -->
+            <template id="case-tv">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">TV Operations Dashboard</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">A wall‑mounted dashboard shows live KPIs for operations, updating every minute with clear color coding and trend arrows.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> Chart.js, WebSockets, Node/Express feed</li>
+            <li><strong>Impact:</strong> Reduced manual status calls, faster shift handover</li>
+            <li><strong>Extras:</strong> Dark/light themes, TV safe margins</li>
+          </ul>
+        </div>
+      </template>
+
+            <template id="case-rdm">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Retail Development Map</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">A geospatial decision tool for expansion and competitor tracking.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> Leaflet, PostGIS (optional), CSV/Excel importers</li>
+            <li><strong>Impact:</strong> Shorter site evaluation cycles, shared visibility</li>
+            <li><strong>Extras:</strong> Photo gallery, printable PDFs</li>
+          </ul>
+        </div>
+      </template>
+
+            <template id="case-excel">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Excel Systems Suite</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">Robust, user‑friendly Excel/VBA systems that behave like applications.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> Excel, VBA, optional Python helpers</li>
+            <li><strong>Impact:</strong> Hours saved weekly, fewer data errors</li>
+            <li><strong>Extras:</strong> Locked templates, audit trail</li>
+          </ul>
+        </div>
+      </template>
+
+            <template id="case-ai">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">AI Helpdesk Assistant</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">A GPT‑powered assistant responds to FAQs and routes non‑routine issues.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> GPT API, embeddings, moderation</li>
+            <li><strong>Impact:</strong> Faster responses, fewer misrouted tickets</li>
+            <li><strong>Extras:</strong> Analytics and fallback to human</li>
+          </ul>
+        </div>
+      </template>
+
+            <template id="case-field">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Field Mobile App</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">A Flutter app for field data collection with offline sync and photo capture.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> Flutter, SQLite, background sync</li>
+            <li><strong>Impact:</strong> Reliable data capture in low‑connectivity areas</li>
+            <li><strong>Extras:</strong> Role‑based permissions</li>
+          </ul>
+        </div>
+      </template>
+
+            <template id="case-fin">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Finance Reporting Pack</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-secondary">Automated month‑end reporting from Excel to formatted PDFs, emailed to stakeholders.</p>
+          <ul class="small-muted">
+            <li><strong>Stack:</strong> Excel/VBA, wkhtmltopdf or Office APIs</li>
+            <li><strong>Impact:</strong> Manual work cut by 60–80%</li>
+            <li><strong>Extras:</strong> Approval gates & archives</li>
+          </ul>
+        </div>
+      </template>
+
+            <!-- Modal shell -->
+            <div class="modal fade" id="caseModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content" style="background:#121826">
+                        <!-- dynamic content inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA strip -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="card shadow-soft">
+                        <div class="card-body d-flex flex-column flex-md-row align-items-md-center gap-3">
+                            <div>
+                                <h4 class="mb-1">Have a similar problem?</h4>
+                                <p class="small-muted mb-0">We’ll map your scope to a proven approach and give you a clear plan.</p>
+                            </div>
+                            <div class="ms-md-auto d-flex gap-2">
+                                <a class="btn btn-accent" href="/contact.html#quote">Request Quote</a>
+                                <a class="btn btn-outline-light" href="/pricing.html">View Pricing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer partial include -->
+        <div id="footer-include"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script>
+            // Load partials
+            async function loadPartial(id, file) {
+                try {
+                    const res = await fetch(file);
+                    const html = await res.text();
+                    document.getElementById(id).innerHTML = html;
+                } catch (err) {
+                    console.error('Partial load failed:', file, err);
+                }
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                loadPartial('header-include', '/partials/header.html');
+                loadPartial('footer-include', '/partials/footer.html');
+            });
+
+            // Simple filter (client-side)
+            document.addEventListener('click', (e) => {
+                const btn = e.target.closest('[data-filter]');
+                if (!btn) return;
+                const tag = btn.getAttribute('data-filter');
+                document.querySelectorAll('#workGrid > div').forEach(card => {
+                    const tags = (card.getAttribute('data-tags') || '').split(' ');
+                    if (tag === 'all' || tags.includes(tag)) card.classList.remove('d-none');
+                    else card.classList.add('d-none');
+                });
+                if (window.plausible) plausible('Work Filter', {
+                    props: {
+                        tag
+                    }
+                });
+            });
+
+            // Case modal loader
+            function openCase(id) {
+                const tpl = document.getElementById(id);
+                const modalEl = document.getElementById('caseModal');
+                const content = modalEl.querySelector('.modal-content');
+                if (!tpl || !content) return;
+                content.innerHTML = tpl.innerHTML;
+                const modal = new bootstrap.Modal(modalEl);
+                modal.show();
+                if (window.plausible) plausible('Open Case', {
+                    props: {
+                        id
+                    }
+                });
+            }
+            window.openCase = openCase;
+        </script>
+    </body>
+
+</html>

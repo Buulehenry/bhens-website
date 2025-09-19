@@ -1,0 +1,444 @@
+/* =============================
+   FILE: assets/css/styles.css
+   Bhens Enterprises — Global Styles (Luxe Light Theme)
+   ============================= */
+
+.logo-img {
+    height: 36px;
+    /* Adjust as needed */
+    width: auto;
+    /* Keep aspect ratio */
+    display: block;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--bh-brand);
+}
+
+.navbar .mega-menu {
+    width: 720px;
+    max-width: calc(100vw - 2rem);
+    border-radius: 16px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 14px 34px rgba(10, 31, 58, .16);
+}
+
+
+/* fixed navbar offset */
+
+.mega-item {
+    display: flex!important;
+    align-items: flex-start;
+    gap: 12px;
+    padding: .6rem .5rem!important;
+    border-radius: .6rem;
+    white-space: normal;
+    line-height: 1.25;
+}
+
+.mega-item:hover {
+    background: rgba(212, 175, 55, .12);
+}
+
+.mega-icon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    font-size: 1.15rem;
+    color: var(--bh-accent);
+}
+
+.mega-text {
+    display: block;
+    min-width: 0;
+}
+
+.mega-title {
+    display: block;
+    font-weight: 700;
+    color: var(--bh-brand);
+}
+
+.mega-desc {
+    display: block;
+    font-size: .92rem;
+    color: var(--bh-text-2);
+    margin-top: .15rem;
+}
+
+.mega-col .dropdown-header {
+    font-size: .75rem;
+    letter-spacing: .05em;
+    color: var(--bh-text-2);
+    text-transform: uppercase;
+    padding: .25rem 0 .5rem;
+}
+
+.mega-col .mega-item+.mega-item {
+    margin-top: .25rem;
+}
+
+@media (max-width:991.98px) {
+    .navbar .mega-menu {
+        width: 100%;
+    }
+}
+
+
+/* Mobile: stack to 1 column so nothing squeezes */
+
+@media (max-width: 991.98px) {
+    .navbar .mega-menu {
+        width: 100%;
+    }
+}
+
+
+/* Optional subtle header inside menus */
+
+.dropdown-header {
+    font-size: .78rem;
+    letter-spacing: .04em;
+    color: var(--bh-text-2);
+}
+
+
+/* sticky contact bar under the navbar */
+
+.topbar {
+    position: sticky;
+    top: calc(var(--nav-offset) + var(--nav-height));
+    z-index: 1025;
+    /* under navbar, above content */
+    background: #23292f;
+    /* elegant charcoal */
+    color: #e9edf3;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.topbar a {
+    color: #e9edf3;
+}
+
+.topbar .vr {
+    border-color: rgba(255, 255, 255, .25);
+    height: 18px;
+}
+
+
+/* ensure content clears navbar height */
+
+.page-wrap {
+    padding-top: calc(var(--nav-offset) + var(--nav-height) + 12px);
+}
+
+:root {
+    /* Luxe light theme */
+    --bh-brand: #0b1f3a;
+    /* deep navy */
+    --bh-bg: #f7f6f3;
+    /* ivory/porcelain */
+    --bh-bg-soft: #ffffff;
+    /* cards/surfaces */
+    --bh-text: #1a1e27;
+    /* primary text (near-black) */
+    --bh-text-2: #616a7a;
+    /* secondary text (slate) */
+    --bh-accent: #d4af37;
+    /* gold */
+    --bh-accent-2: #0e7c7b;
+    /* emerald */
+    --bh-border: #e6e8ed;
+    /* elegant light border */
+    --bh-link: #0a3b8e;
+    /* refined blue link */
+    --bh-danger: #b42318;
+    --bh-warning: #b08928;
+    /* warm gold-brown */
+    --nav-offset: 30px;
+    --nav-height: 64px;
+    --topbar-height: 40px;
+}
+
+html,
+body {
+    margin-top: 28px;
+    background: var(--bh-bg);
+    color: var(--bh-text);
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.ins {
+    color: #b08928;
+}
+
+
+/* Typography helpers */
+
+.text-secondary {
+    color: var(--bh-text-2)!important
+}
+
+.small-muted {
+    color: var(--bh-text-2);
+    font-size: .95rem
+}
+
+.link-muted {
+    color: var(--bh-text-2);
+    text-decoration: none
+}
+
+.link-muted:hover {
+    color: var(--bh-text)
+}
+
+.badge-outline {
+    border: 1px solid var(--bh-border);
+    color: var(--bh-brand);
+    background: transparent;
+}
+
+
+/* Layout */
+
+.page-wrap {
+    padding-top: 92px
+}
+
+
+/* fixed navbar */
+
+.section {
+    padding: 3rem 0
+}
+
+.hero {
+    padding: 4.5rem 0 2.5rem;
+    background: linear-gradient(180deg, rgba(212, 175, 55, .06), rgba(255, 255, 255, 0));
+    border-bottom: 1px solid var(--bh-border)
+}
+
+
+/* Navbar */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--bh-border)
+}
+
+.navbar .nav-link {
+    color: var(--bh-brand);
+    font-weight: 600
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--bh-accent)
+}
+
+.navbar-brand {
+    color: var(--bh-brand)
+}
+
+.brand-dot {
+    display: inline-block;
+    width: .45rem;
+    height: .45rem;
+    border-radius: 50%;
+    background: var(--bh-accent);
+    margin-left: .25rem;
+    box-shadow: 0 0 12px rgba(212, 175, 55, .45)
+}
+
+
+/* Buttons */
+
+.btn {
+    border-radius: .8rem
+}
+
+.btn-accent {
+    background: var(--bh-accent);
+    border-color: var(--bh-accent);
+    color: #1a1e27
+}
+
+.btn-accent:hover {
+    filter: brightness(1.03)
+}
+
+
+/* Re-style outline-light to suit light theme; keep footer override below */
+
+.btn-outline-light {
+    border-color: #cfd6e2;
+    color: var(--bh-brand)
+}
+
+.btn-outline-light:hover {
+    background: #f1f4f9
+}
+
+
+/* Cards & surfaces */
+
+.card {
+    background: var(--bh-bg-soft);
+    border: 1px solid var(--bh-border)
+}
+
+.card .card-title {
+    color: var(--bh-brand)
+}
+
+.shadow-soft {
+    box-shadow: 0 10px 24px rgba(10, 31, 58, .08)
+}
+
+
+/* Icons */
+
+.icon-blob {
+    display: inline-grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: rgba(212, 175, 55, .12);
+    color: var(--bh-accent)
+}
+
+.icon-blob i {
+    line-height: 1
+}
+
+
+/* Forms */
+
+.form-control,
+.form-select {
+    background: #fff;
+    border-color: var(--bh-border);
+    color: var(--bh-brand)
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bh-accent);
+    box-shadow: 0 0 0 .2rem rgba(212, 175, 55, .18)
+}
+
+.form-label {
+    color: var(--bh-brand)
+}
+
+
+/* Alerts */
+
+.alert-bhens {
+    background: linear-gradient(180deg, rgba(212, 175, 55, .08), rgba(212, 175, 55, .03));
+    border: 1px solid rgba(212, 175, 55, .35);
+    color: #5e4d17
+}
+
+
+/* Tables */
+
+.table.bhens {
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bh-border);
+    color: var(--bh-brand)
+}
+
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: rgba(10, 31, 58, .02)
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(10, 31, 58, .03)
+}
+
+
+/* Footer */
+
+.site-footer {
+    background: var(--bh-brand);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    color: #e8edf5
+}
+
+.site-footer .logo {
+    font-weight: 700;
+    color: #fff
+}
+
+.footer-contacts a {
+    color: #cfd6e2;
+    text-decoration: none
+}
+
+.footer-contacts a:hover {
+    color: #fff
+}
+
+.footer-nav a {
+    color: #cfd6e2;
+    text-decoration: none
+}
+
+.footer-nav a:hover {
+    color: #fff
+}
+
+
+/* Utilities */
+
+.hover-light:hover {
+    color: #fff!important
+}
+
+.badge.bg-warning {
+    color: #111
+}
+
+
+/* Footer-specific button tweak so outline-light stays legible on dark footer */
+
+.site-footer .btn-outline-light {
+    border-color: rgba(255, 255, 255, .45);
+    color: #fff
+}
+
+.site-footer .btn-outline-light:hover {
+    background: rgba(255, 255, 255, .08)
+}
+
+
+/* Back-to-top */
+
+#backToTop {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1050;
+    display: none;
+    box-shadow: 0 8px 18px rgba(10, 31, 58, .18)
+}
+
+
+/* Responsive tweaks */
+
+@media (max-width: 991.98px) {
+    .page-wrap {
+        padding-top: 82px
+    }
+}

@@ -1,0 +1,342 @@
+<!-- ============================= -->
+<!-- FILE: pricing.html            -->
+<!-- ============================= -->
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Pricing — Bhens Enterprises Ltd</title>
+        <meta name="description" content="Transparent pricing for software, dashboards, Excel/VBA automations, and AI integrations. Fixed packages and custom quotes." />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Pricing — Bhens Enterprises" />
+        <meta property="og:description" content="Transparent packages for MVPs, automation kits, analytics sprints, and AI pilots." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/assets/img/og-banner.jpg" />
+        <meta property="og:url" content="https://bhens.enterprises/pricing.html" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <!-- Plausible Analytics -->
+        <script defer data-domain="bhens.enterprises" src="https://plausible.io/js/script.js"></script>
+
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+        <link href="/assets/css/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Header partial include -->
+        <div id="header-include"></div>
+
+        <main class="page-wrap">
+            <!-- Page header -->
+            <header class="hero">
+                <div class="container">
+                    <div class="row align-items-center g-3">
+                        <div class="col-lg-9">
+                            <span class="badge badge-outline mb-3">Pricing</span>
+                            <h1 class="display-6 fw-bold">Transparent pricing. Clear scope. No surprises.</h1>
+                            <p class="text-secondary lead">Pick a package to move fast, or request a tailored quote for your specific needs. All work includes documentation and handover.</p>
+                            <div class="d-flex gap-2 mt-2">
+                                <a class="btn btn-accent" href="/contact.html#quote">Request a custom quote</a>
+                                <a class="btn btn-outline-light" href="#packages">Explore packages</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Notes banner -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="alert alert-bhens">
+                        Prices are shown in **UGX** equivalents for simplicity and can be invoiced in UGX or USD. Complex integrations, data migrations, or extra screens may affect scope and cost.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Packages -->
+            <section id="packages" class="section">
+                <div class="container">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold">Fixed‑Scope Packages</h3>
+                        <p class="small-muted">Start fast with a clear deliverable set. We can extend or tailor any package.</p>
+                    </div>
+
+                    <div class="row g-3 align-items-stretch">
+                        <!-- Starter MVP -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 shadow-soft">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-baseline justify-content-between">
+                                        <h5 class="fw-semibold mb-0">Starter MVP</h5>
+                                        <span class="badge badge-outline">Popular</span>
+                                    </div>
+                                    <div class="display-6 fw-bold mt-2">UGX 4.9M</div>
+                                    <p class="text-secondary">Focused prototype with core screens, clean UI, and basic auth.</p>
+                                    <ul class="small-muted mb-4">
+                                        <li>3–5 screens (web or mobile)</li>
+                                        <li>Forms + validation</li>
+                                        <li>Basic auth (login)</li>
+                                        <li>Deploy to Netlify/Pages</li>
+                                        <li>Docs & handover</li>
+                                    </ul>
+                                    <div class="mt-auto d-grid">
+                                        <a class="btn btn-accent" href="/contact.html#quote" onclick="track('Pricing Select',{plan:'Starter MVP'})">Start</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Automation Kit -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 shadow-soft">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="fw-semibold">Automation Kit</h5>
+                                    <div class="display-6 fw-bold mt-2">UGX 3.2M</div>
+                                    <p class="text-secondary">Excel/VBA automations that remove repetitive work and produce PDFs.</p>
+                                    <ul class="small-muted mb-4">
+                                        <li>Locked workbook template</li>
+                                        <li>Buttons: import/export/PDF</li>
+                                        <li>Data validation</li>
+                                        <li>Handover video</li>
+                                    </ul>
+                                    <div class="mt-auto d-grid">
+                                        <a class="btn btn-accent" href="/contact.html#quote" onclick="track('Pricing Select',{plan:'Automation Kit'})">Start</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Analytics Sprint -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 shadow-soft">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="fw-semibold ">Analytics Sprint</h5>
+                                    <div class="display-6 fw-bold mt-2">UGX 5.5M</div>
+                                    <p class="text-secondary">Dashboard with KPIs, trends, and a refresh pipeline. TV‑friendly.</p>
+                                    <ul class="small-muted mb-4">
+                                        <li>2–3 dashboard pages</li>
+                                        <li>Data dictionary</li>
+                                        <li>Exports & email</li>
+                                        <li>Admin notes</li>
+                                    </ul>
+                                    <div class="mt-auto d-grid">
+                                        <a class="btn btn-accent" href="/contact.html#quote" onclick="track('Pricing Select',{plan:'Analytics Sprint'})">Start</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Pilot -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 shadow-soft border-warning">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="d-flex align-items-baseline justify-content-between">
+                                        <h5 class="fw-semibold mb-0">AI Pilot</h5>
+                                        <span class="badge bg-warning text-dark">New</span>
+                                    </div>
+                                    <div class="display-6 fw-bold mt-2">UGX 4.2M</div>
+                                    <p class="text-secondary">GPT assistant or document workflow with monitoring & guardrails.</p>
+                                    <ul class="small-muted mb-4">
+                                        <li>Scoped prompts & flows</li>
+                                        <li>API connectors</li>
+                                        <li>Fallback UX</li>
+                                        <li>Usage guide</li>
+                                    </ul>
+                                    <div class="mt-auto d-grid">
+                                        <a class="btn btn-accent" href="/contact.html#quote" onclick="track('Pricing Select',{plan:'AI Pilot'})">Start</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add‑ons -->
+                    <div class="row g-3 mt-1">
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">Common add‑ons</h6>
+                                    <ul class="small-muted mb-0">
+                                        <li>Payments integration</li>
+                                        <li>Multi‑role access control</li>
+                                        <li>CSV/Excel migration scripts</li>
+                                        <li>SMS/WhatsApp notifications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">What’s always included</h6>
+                                    <ul class="small-muted mb-0">
+                                        <li>Documentation & handover</li>
+                                        <li>Bug‑fix window (14 days)</li>
+                                        <li>Source code & assets</li>
+                                        <li>Weekly check‑ins</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="fw-semibold">Optional SLAs</h6>
+                                    <ul class="small-muted mb-0">
+                                        <li>Priority bug fixes</li>
+                                        <li>Small feature tweaks</li>
+                                        <li>Monthly analytics review</li>
+                                        <li>Team training</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison table -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="text-center mb-3">
+                        <h3 class="fw-bold">Compare Plans</h3>
+                        <p class="small-muted">A quick glance at what changes across packages.</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-grey table-striped table-hover align-middle bhens">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Starter MVP</th>
+                                    <th>Automation Kit</th>
+                                    <th>Analytics Sprint</th>
+                                    <th>AI Pilot</th>
+                                </tr>
+                            </thead>
+                            <tbody class="small">
+                                <tr>
+                                    <td>Screens / Modules</td>
+                                    <td>3–5 UI screens</td>
+                                    <td>1–2 core automations</td>
+                                    <td>2–3 dashboard pages</td>
+                                    <td>1 AI flow</td>
+                                </tr>
+                                <tr>
+                                    <td>Deliverable Type</td>
+                                    <td>Web/mobile UI</td>
+                                    <td>Excel/VBA workbook</td>
+                                    <td>Dashboard + data pipeline</td>
+                                    <td>Assistant/workflow</td>
+                                </tr>
+                                <tr>
+                                    <td>Timeline</td>
+                                    <td>2–4 weeks</td>
+                                    <td>3–10 days</td>
+                                    <td>1–3 weeks</td>
+                                    <td>1–2 weeks</td>
+                                </tr>
+                                <tr>
+                                    <td>Docs & Handover</td>
+                                    <td>✔</td>
+                                    <td>✔</td>
+                                    <td>✔</td>
+                                    <td>✔</td>
+                                </tr>
+                                <tr>
+                                    <td>Support Window</td>
+                                    <td>14 days</td>
+                                    <td>14 days</td>
+                                    <td>14 days</td>
+                                    <td>14 days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ teaser -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-lg-5">
+                            <h3 class="fw-bold">Pricing FAQs</h3>
+                            <p class="text-secondary">Quick answers to common questions about scope, payment and timelines.</p>
+                            <a class="btn btn-outline-light" href="/faq.html">See all FAQs</a>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="accordion" id="pricingFaq">
+                                <div class="accordion-item bg-transparent border">
+                                    <h2 class="accordion-header" id="q1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="false" aria-controls="a1">Are these prices final?</button></h2>
+                                    <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#pricingFaq">
+                                        <div class="accordion-body small-muted">They’re typical scopes for speed. If your project needs extra screens, integrations, or data work, we’ll confirm a tailored quote before we start.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border">
+                                    <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">How do payments work?</button></h2>
+                                    <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#pricingFaq">
+                                        <div class="accordion-body small-muted">50% to kick off, 50% on delivery. Invoices in UGX or USD. For larger scopes we can break into milestones.</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border">
+                                    <h2 class="accordion-header" id="q3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">What about maintenance?</button></h2>
+                                    <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#pricingFaq">
+                                        <div class="accordion-body small-muted">Each package includes a 14‑day bug‑fix window. After that, we offer optional SLAs for proactive support and small tweaks.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA strip -->
+            <section class="section pt-0">
+                <div class="container">
+                    <div class="card shadow-soft">
+                        <div class="card-body d-flex flex-column flex-md-row align-items-md-center gap-3">
+                            <div>
+                                <h4 class="mb-1">Ready to proceed?</h4>
+                                <p class="small-muted mb-0">Tell us what you need — we’ll confirm scope, finalize pricing and schedule delivery.</p>
+                            </div>
+                            <div class="ms-md-auto d-flex gap-2">
+                                <a class="btn btn-accent" href="/contact.html#quote">Request Quote</a>
+                                <a class="btn btn-outline-light" href="/contact.html#book">Book a Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer partial include -->
+        <div id="footer-include"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script>
+            // Load partials
+            async function loadPartial(id, file) {
+                try {
+                    const res = await fetch(file);
+                    const html = await res.text();
+                    document.getElementById(id).innerHTML = html;
+                } catch (err) {
+                    console.error('Partial load failed:', file, err);
+                }
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                loadPartial('header-include', '/partials/header.html');
+                loadPartial('footer-include', '/partials/footer.html');
+            });
+        </script>
+    </body>
+
+</html>

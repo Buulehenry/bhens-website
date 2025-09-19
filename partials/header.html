@@ -1,0 +1,159 @@
+<!-- ============================= -->
+<!-- FILE: partials/header.html   -->
+<!-- Clean, executive header with topbar + navbar (fixed) -->
+<!-- ============================= -->
+
+<!-- Primary navbar (fixed) -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm" aria-label="Primary">
+    <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="/index.html" aria-label="Bhens Enterprises home">
+      Bhens<span class="brand-dot"></span>
+    </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <!-- Centered primary links -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+
+                <!-- Services: Mega menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/services.html" id="navServices" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Services</a>
+                    <div class="dropdown-menu p-4 shadow-lg mega-menu" aria-labelledby="navServices">
+                        <div class="row g-4">
+                            <div class="col-12 col-md-6 mega-col">
+                                <h6 class="dropdown-header">Build</h6>
+
+                                <a class="dropdown-item mega-item" href="/services.html#webapps">
+                                    <span class="mega-icon"><i class="fa fa-code"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">Web & Mobile Apps</span>
+                                    <span class="mega-desc">Responsive sites, Flutter/React apps, secure APIs</span>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item mega-item" href="/services.html#excel">
+                                    <span class="mega-icon"><i class="fa fa-table"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">Excel / VBA Automations</span>
+                                    <span class="mega-desc">POS, rentals, reporting, PDF generators</span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 mega-col">
+                                <h6 class="dropdown-header">Scale</h6>
+
+                                <a class="dropdown-item mega-item" href="/services.html#dashboards">
+                                    <span class="mega-icon"><i class="fa fa-chart-line"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">Dashboards & BI</span>
+                                    <span class="mega-desc">KPIs, Power BI, Chart.js, data pipelines</span>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item mega-item" href="/services.html#ai">
+                                    <span class="mega-icon"><i class="fa fa-robot"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">AI & Automations</span>
+                                    <span class="mega-desc">Assistants, document AI, notifications</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <a href="/contact.html#quote" class="btn btn-accent w-100" onclick="track('Nav CTA',{cta:'start-project'})">Start a Project</a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Solutions: Mega menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/solutions.html" id="navSolutions" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Solutions</a>
+                    <div class="dropdown-menu p-4 shadow-lg mega-menu" aria-labelledby="navSolutions">
+                        <div class="row g-4">
+                            <div class="col-12 col-md-6 mega-col">
+                                <h6 class="dropdown-header">Productized</h6>
+
+                                <a class="dropdown-item mega-item" href="/solutions.html#kits">
+                                    <span class="mega-icon"><i class="fa fa-gears"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">Automation Kits</span>
+                                    <span class="mega-desc">Ready‑to‑deploy flows for approvals, reminders, PDFs</span>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item mega-item" href="/solutions.html#dash">
+                                    <span class="mega-icon"><i class="fa fa-chart-pie"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">BI Dashboards</span>
+                                    <span class="mega-desc">Sales, inventory & finance dashboards with alerts</span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="col-12 col-md-6 mega-col">
+                                <h6 class="dropdown-header">Assistants</h6>
+
+                                <a class="dropdown-item mega-item" href="/solutions.html#assistants">
+                                    <span class="mega-icon"><i class="fa fa-comments"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">GPT Assistants</span>
+                                    <span class="mega-desc">Support bots, knowledge search, document Q&A</span>
+                                    </span>
+                                </a>
+
+                                <a class="dropdown-item mega-item" href="/solutions.html#collection">
+                                    <span class="mega-icon"><i class="fa fa-mobile-screen"></i></span>
+                                    <span class="mega-text">
+                    <span class="mega-title">Field Data Capture</span>
+                                    <span class="mega-desc">Offline‑first mobile forms with GPS & media</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <a href="/pricing.html" class="btn btn-outline-light w-100" onclick="track('Nav CTA',{cta:'solutions-pricing'})">See Pricing</a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="/work.html">Work</a></li>
+                <li class="nav-item"><a class="nav-link" href="/pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="/faq.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Right CTAs -->
+            <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-outline-light" href="/contact.html#quote" onclick="track('Nav CTA',{cta:'quote'})">Request Quote</a>
+                <a class="btn btn-sm btn-accent" href="/contact.html#book" onclick="track('Nav CTA',{cta:'book'})"><i class="fa fa-calendar-check me-1"></i>Book a Call</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Secondary topbar (contact strip) -->
+<div class="topbar" role="navigation" aria-label="Contact bar">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 py-2">
+        <div class="d-flex align-items-center gap-3 small">
+            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="tel:+256742699657" onclick="track('Topbar Click',{item:'phone'})">
+                <i class="fa fa-phone me-2"></i> +256 742 699 657
+            </a>
+            <span class="vr d-none d-md-inline"></span>
+            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="mailto:info@bhensenterprises.cloud" onclick="track('Topbar Click',{item:'email'})">
+                <i class="fa fa-envelope me-2"></i> info@bhensenterprises.cloud
+            </a>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <a class="text-reset" target="_blank" href="https://wa.me/256742699657" aria-label="WhatsApp" onclick="track('Topbar Social',{net:'whatsapp'})"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="text-reset" target="_blank" href="https://www.linkedin.com/company/bhensenterprises" aria-label="LinkedIn" onclick="track('Topbar Social',{net:'linkedin'})"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="text-reset" target="_blank" href="https://x.com/BHENSENT" aria-label="Twitter" onclick="track('Topbar Social',{net:'twitter'})"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+</div>
