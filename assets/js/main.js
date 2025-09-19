@@ -1,31 +1,32 @@
 // =============================
-// FILE: assets/js/main.js
+// FILE: assets/js/main.js (ES5 safe)
 // Bhens Enterprises — Global JS helpers
 // =============================
-
 (function() {
-    const $ = (sel, ctx = document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+    var $ = function(sel, ctx) { return (ctx || document).querySelector(sel); };
+    var $$ = function(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
     // ---- Plausible helper (safe)
     window.track = function(name, props) {
-        try { if (window.plausible) window.plausible(name, props ? { props } : {}) } catch (e) { /* noop */ }
-    }
+        try { if (window.plausible) window.plausible(name, props ? { props: props } : {}); } catch (e) {}
+    };
 
     // ---- Smooth scroll for hash links (with navbar offset)
     function smoothScrollTo(hash) {
-        const target = document.getElementById(hash.replace('#', ''));
+        var id = hash.replace('#', '');
+        var target = document.getElementById(id);
         if (!target) return;
-        const nav = $('.navbar');
-        const offset = (nav ? .offsetHeight || 80) + 12;
-        const y = target.getBoundingClientRect().top + window.scrollY - offset;
+        var nav = $('.navbar');
+        var offset = ((nav && nav.offsetHeight) || 80) + 12;
+        var y = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: y, behavior: 'smooth' });
     }
 
-    document.addEventListener('click', (e) => {
-        const a = e.target.closest('a[href^="#"]');
+    // Intercept in-page anchor clicks
+    document.addEventListener('click', function(e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
         if (!a) return;
-        const href = a.getAttribute('href');
+        var href = a.getAttribute('href');
         if (href && href.length > 1) {
             e.preventDefault();
             history.pushState(null, '', href);
@@ -34,101 +35,98 @@
         }
     });
 
-    // Enable hover dropdowns on lg+ screens; keep clicks for mobile
+    // ---- Hover dropdowns on lg+ screens
     function enableHoverDropdowns() {
-        const isDesktop = window.matchMedia('(min-width: 992px)').matches;
-        document.querySelectorAll('.navbar .dropdown').forEach(dd => {
-            const trigger = dd.querySelector('[data-bs-toggle="dropdown"]');
-            if (!trigger) return;
-            const inst = bootstrap.Dropdown.getOrCreateInstance(trigger, { autoClose: 'outside' });
+        var mq = window.matchMedia && window.matchMedia('(min-width: 992px)');
+        var isDesktop = mq ? mq.matches : window.innerWidth >= 992;
 
-            // Clean old listeners first
-            dd.onmouseenter && dd.removeEventListener('mouseenter', dd.onmouseenter);
-            dd.onmouseleave && dd.removeEventListener('mouseleave', dd.onmouseleave);
+        $$('.navbar .dropdown').forEach(function(dd) {
+            var trigger = dd.querySelector('[data-bs-toggle="dropdown"]');
+            if (!trigger || typeof bootstrap === 'undefined' || !bootstrap.Dropdown) return;
+
+            var inst = bootstrap.Dropdown.getOrCreateInstance(trigger, { autoClose: 'outside' });
+
+            if (dd.onmouseenter) dd.removeEventListener('mouseenter', dd.onmouseenter);
+            if (dd.onmouseleave) dd.removeEventListener('mouseleave', dd.onmouseleave);
 
             if (isDesktop) {
-                dd.onmouseenter = () => inst.show();
-                dd.onmouseleave = () => inst.hide();
+                dd.onmouseenter = function() { inst.show(); };
+                dd.onmouseleave = function() { inst.hide(); };
                 dd.addEventListener('mouseenter', dd.onmouseenter);
                 dd.addEventListener('mouseleave', dd.onmouseleave);
             } else {
-                // mobile: rely on click/tap; ensure hidden on resize down
-                inst.hide();
+                try { inst.hide(); } catch (e) {}
             }
         });
     }
-
     document.addEventListener('DOMContentLoaded', enableHoverDropdowns);
     window.addEventListener('resize', enableHoverDropdowns);
 
-
+    // ---- Adjust layout vars
     function adjustLayout() {
-        const nav = document.querySelector('.navbar.fixed-top');
+        var nav = document.querySelector('.navbar.fixed-top');
         if (!nav) return;
-        const h = nav.offsetHeight || 64;
+        var h = nav.offsetHeight || 64;
         document.documentElement.style.setProperty('--nav-height', h + 'px');
     }
     document.addEventListener('DOMContentLoaded', adjustLayout);
     window.addEventListener('resize', adjustLayout);
 
-
-    // ---- Active nav highlight based on path
+    // ---- Active nav highlight (project pages & custom domains)
     function setActiveNav() {
-        // normalize current path to just the file name (default index.html)
-        const pathname = location.pathname;
-        let current = pathname.endsWith('/') ? 'index.html' : pathname.split('/').pop();
-
-        document.querySelectorAll('.navbar .nav-link').forEach(a => {
-            const raw = a.getAttribute('href') || '';
-            // normalize link too (strip leading slash)
-            const link = raw.replace(/^\//, '') || 'index.html';
-            a.classList.toggle('active', link === current);
+        var pathname = location.pathname;
+        var current = /\/$/.test(pathname) ? 'index.html' : pathname.split('/').pop();
+        $$('.navbar .nav-link').forEach(function(a) {
+            var raw = a.getAttribute('href') || '';
+            var link = raw.replace(/^\//, '') || 'index.html';
+            if (link === current) a.classList.add('active');
+            else a.classList.remove('active');
         });
     }
 
-
     // ---- Collapse mobile nav after click
-    document.addEventListener('click', (e) => {
-        const navLink = e.target.closest('.navbar .nav-link, .navbar .btn');
+    document.addEventListener('click', function(e) {
+        var navLink = e.target && e.target.closest ? e.target.closest('.navbar .nav-link, .navbar .btn') : null;
         if (!navLink) return;
-        const nav = $('#nav');
-        if (nav ? .classList.contains('show')) {
-            const bsCollapse = bootstrap.Collapse.getInstance(nav) || new bootstrap.Collapse(nav, { toggle: false });
-            bsCollapse.hide();
+        var nav = $('#nav');
+        if (nav && nav.classList && nav.classList.contains('show')) {
+            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                var bsCollapse = bootstrap.Collapse.getInstance(nav) || new bootstrap.Collapse(nav, { toggle: false });
+                if (bsCollapse) bsCollapse.hide();
+            }
         }
     });
 
     // ---- Back to top button
     function ensureBackToTop() {
         if ($('#backToTop')) return;
-        const btn = document.createElement('button');
+        var btn = document.createElement('button');
         btn.id = 'backToTop';
         btn.className = 'btn btn-accent shadow-soft';
         btn.innerHTML = '<i class="fa fa-arrow-up"></i>';
         btn.title = 'Back to top';
-        btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
         document.body.appendChild(btn);
     }
 
     function toggleBackToTop() {
-        const btn = $('#backToTop');
+        var btn = $('#backToTop');
         if (!btn) return;
-        const show = window.scrollY > 400;
-        btn.style.display = show ? 'inline-flex' : 'none';
+        btn.style.display = (window.scrollY > 400) ? 'inline-flex' : 'none';
     }
 
-    // ---- Autofill footer year (if present)
+    // ---- Autofill footer year
     function setYear() {
-        const y = $('#year');
+        var y = $('#year');
         if (y) y.textContent = new Date().getFullYear();
     }
 
     // ---- Basic form UX + Plausible events
     function wireForm(formId, statusId, eventName) {
-        const form = document.getElementById(formId);
+        var form = document.getElementById(formId);
         if (!form) return;
-        const status = document.getElementById(statusId);
-        form.addEventListener('submit', () => {
+        var status = document.getElementById(statusId);
+        form.addEventListener('submit', function() {
             track(eventName || 'Form Submit', { form: formId });
             if (status) {
                 status.textContent = 'Sending…';
@@ -138,13 +136,13 @@
     }
 
     // ---- Init on DOM ready
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
         setActiveNav();
         ensureBackToTop();
         setYear();
         wireForm('quoteForm', 'quoteStatus', 'Quote Submit');
         wireForm('contactForm', 'contactStatus', 'Contact Submit');
-        if (location.hash) setTimeout(() => smoothScrollTo(location.hash), 50);
+        if (location.hash) setTimeout(function() { smoothScrollTo(location.hash); }, 50);
     });
 
     // ---- Scroll listeners
