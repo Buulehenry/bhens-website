@@ -74,14 +74,18 @@
 
     // ---- Active nav highlight based on path
     function setActiveNav() {
-        const path = location.pathname.replace(/\/$/, '/index.html');
-        $$('.navbar .nav-link').forEach(a => {
-            const href = a.getAttribute('href');
-            if (!href) return;
-            const active = (href === path) || (href === '/index.html' && path.endsWith('/index.html'));
-            a.classList.toggle('active', active);
+        // normalize current path to just the file name (default index.html)
+        const pathname = location.pathname;
+        let current = pathname.endsWith('/') ? 'index.html' : pathname.split('/').pop();
+
+        document.querySelectorAll('.navbar .nav-link').forEach(a => {
+            const raw = a.getAttribute('href') || '';
+            // normalize link too (strip leading slash)
+            const link = raw.replace(/^\//, '') || 'index.html';
+            a.classList.toggle('active', link === current);
         });
     }
+
 
     // ---- Collapse mobile nav after click
     document.addEventListener('click', (e) => {
