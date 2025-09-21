@@ -1,30 +1,62 @@
 <!-- ============================= -->
 <!-- FILE: partials/header.html   -->
-<!-- Clean, executive header with topbar + navbar (fixed) -->
+<!-- Mobile-first header w/ offcanvas nav + desktop mega menus -->
+<!-- Requires Bootstrap 5.3 + Font Awesome -->
 <!-- ============================= -->
 
-<!-- Primary navbar (fixed) -->
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm" aria-label="Primary">
+<!-- Topbar (compact on mobile) -->
+<div class="topbar small border-bottom">
+    <div class="container d-flex align-items-center justify-content-between gap-2 py-2">
+        <div class="d-flex align-items-center gap-3">
+            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="tel:+256742699657" onclick="track('Topbar Click',{item:'phone'})">
+                <i class="fa fa-phone me-2"></i><span class="d-none d-sm-inline">+256 742 699 657</span>
+                <span class="d-inline d-sm-none">Call</span>
+            </a>
+            <span class="vr d-none d-md-inline"></span>
+            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="mailto:info@bhensenterprises.cloud" onclick="track('Topbar Click',{item:'email'})">
+                <i class="fa fa-envelope me-2"></i><span class="d-none d-sm-inline">info@bhensenterprises.cloud</span>
+                <span class="d-inline d-sm-none">Email</span>
+            </a>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <a class="text-reset" target="_blank" href="https://wa.me/256742699657" aria-label="WhatsApp" onclick="track('Topbar Social',{net:'whatsapp'})"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="text-reset" target="_blank" href="https://www.linkedin.com/company/bhensenterprises" aria-label="LinkedIn" onclick="track('Topbar Social',{net:'linkedin'})"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="text-reset" target="_blank" href="https://x.com/BHENSENT" aria-label="Twitter" onclick="track('Topbar Social',{net:'twitter'})"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Primary navbar -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-body" aria-label="Primary" style="top: var(--topbar-h, 0);">
     <div class="container">
+        <!-- Brand -->
         <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html" aria-label="Bhens Enterprises home">
       Bhens<span class="brand-dot"></span>
     </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Mobile: right CTA visible; desktop CTAs stay on the right -->
+        <div class="d-flex align-items-center gap-2 ms-auto d-lg-none">
+            <a class="btn btn-sm btn-outline-primary" href="contact.html#quote" onclick="track('Nav CTA',{cta:'quote'})">Quote</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainOffcanvas" aria-controls="mainOffcanvas" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        </div>
 
-        <div class="collapse navbar-collapse" id="nav">
+        <!-- Desktop nav -->
+        <div class="collapse navbar-collapse d-none d-lg:flex" id="nav">
             <!-- Centered primary links -->
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
 
-                <!-- Services: Mega menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="services.html" id="navServices" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Services</a>
+                <!-- Services: Desktop mega menu -->
+                <li class="nav-item dropdown position-static d-none d-lg-block">
+                    <a class="nav-link dropdown-toggle" href="services.html" id="navServices" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Services
+          </a>
                     <div class="dropdown-menu p-4 shadow-lg mega-menu" aria-labelledby="navServices">
                         <div class="row g-4">
-                            <div class="col-12 col-md-6 mega-col">
+                            <div class="col-6 mega-col">
                                 <h6 class="dropdown-header">Build</h6>
 
                                 <a class="dropdown-item mega-item" href="services.html#webapps">
@@ -44,7 +76,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-12 col-md-6 mega-col">
+                            <div class="col-6 mega-col">
                                 <h6 class="dropdown-header">Scale</h6>
 
                                 <a class="dropdown-item mega-item" href="services.html#dashboards">
@@ -70,19 +102,21 @@
                     </div>
                 </li>
 
-                <!-- Solutions: Mega menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="solutions.html" id="navSolutions" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Solutions</a>
+                <!-- Solutions: Desktop mega menu -->
+                <li class="nav-item dropdown position-static d-none d-lg-block">
+                    <a class="nav-link dropdown-toggle" href="solutions.html" id="navSolutions" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Solutions
+          </a>
                     <div class="dropdown-menu p-4 shadow-lg mega-menu" aria-labelledby="navSolutions">
                         <div class="row g-4">
-                            <div class="col-12 col-md-6 mega-col">
+                            <div class="col-6 mega-col">
                                 <h6 class="dropdown-header">Productized</h6>
 
                                 <a class="dropdown-item mega-item" href="solutions.html#kits">
                                     <span class="mega-icon"><i class="fa fa-gears"></i></span>
                                     <span class="mega-text">
                     <span class="mega-title">Automation Kits</span>
-                                    <span class="mega-desc">Ready‑to‑deploy flows for approvals, reminders, PDFs</span>
+                                    <span class="mega-desc">Ready-to-deploy flows for approvals, reminders, PDFs</span>
                                     </span>
                                 </a>
 
@@ -95,7 +129,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-12 col-md-6 mega-col">
+                            <div class="col-6 mega-col">
                                 <h6 class="dropdown-header">Assistants</h6>
 
                                 <a class="dropdown-item mega-item" href="solutions.html#assistants">
@@ -110,7 +144,7 @@
                                     <span class="mega-icon"><i class="fa fa-mobile-screen"></i></span>
                                     <span class="mega-text">
                     <span class="mega-title">Field Data Capture</span>
-                                    <span class="mega-desc">Offline‑first mobile forms with GPS & media</span>
+                                    <span class="mega-desc">Offline-first mobile forms with GPS & media</span>
                                     </span>
                                 </a>
                             </div>
@@ -121,15 +155,15 @@
                     </div>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="work.html">Work</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="faq.html">FAQ</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
 
-            <!-- Right CTAs -->
-            <div class="d-flex gap-2">
+            <!-- Desktop CTAs -->
+            <div class="d-none d-lg-flex gap-2">
                 <a class="btn btn-sm btn-outline-light" href="contact.html#quote" onclick="track('Nav CTA',{cta:'quote'})">Request Quote</a>
                 <a class="btn btn-sm btn-accent" href="contact.html#book" onclick="track('Nav CTA',{cta:'book'})"><i class="fa fa-calendar-check me-1"></i>Book a Call</a>
             </div>
@@ -137,23 +171,208 @@
     </div>
 </nav>
 
-<!-- Secondary topbar (contact strip) -->
-<div class="topbar" role="navigation" aria-label="Contact bar">
-    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 py-2">
-        <div class="d-flex align-items-center gap-3 small">
-            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="tel:+256742699657" onclick="track('Topbar Click',{item:'phone'})">
-                <i class="fa fa-phone me-2"></i> +256 742 699 657
-            </a>
-            <span class="vr d-none d-md-inline"></span>
-            <a class="text-reset text-decoration-none d-inline-flex align-items-center" href="mailto:info@bhensenterprises.cloud" onclick="track('Topbar Click',{item:'email'})">
-                <i class="fa fa-envelope me-2"></i> info@bhensenterprises.cloud
-            </a>
+<!-- Mobile Offcanvas (replaces dropdowns) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mainOffcanvas" aria-labelledby="mainOffcanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mainOffcanvasLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+        <a class="nav-link py-2" href="index.html" data-close>Home</a>
+
+        <!-- Collapsible groups to mimic mega sections -->
+        <div class="accordion" id="mobileAcc">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="svcHead">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svcBody" aria-expanded="false" aria-controls="svcBody">
+            Services
+          </button>
+                </h2>
+                <div id="svcBody" class="accordion-collapse collapse" data-bs-parent="#mobileAcc">
+                    <div class="accordion-body p-0">
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="services.html#webapps" data-close>
+                            <i class="fa fa-code me-3 mt-1"></i>
+                            <span><strong>Web & Mobile Apps</strong><br><small>Responsive sites, Flutter/React apps, secure APIs</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="services.html#excel" data-close>
+                            <i class="fa fa-table me-3 mt-1"></i>
+                            <span><strong>Excel / VBA Automations</strong><br><small>POS, rentals, reporting, PDF generators</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="services.html#dashboards" data-close>
+                            <i class="fa fa-chart-line me-3 mt-1"></i>
+                            <span><strong>Dashboards & BI</strong><br><small>KPI dashboards, Chart.js, Power BI</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="services.html#ai" data-close>
+                            <i class="fa fa-robot me-3 mt-1"></i>
+                            <span><strong>AI & Automations</strong><br><small>Assistants, document AI, notifications</small></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mt-2">
+                <h2 class="accordion-header" id="solHead">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#solBody" aria-expanded="false" aria-controls="solBody">
+            Solutions
+          </button>
+                </h2>
+                <div id="solBody" class="accordion-collapse collapse" data-bs-parent="#mobileAcc">
+                    <div class="accordion-body p-0">
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="solutions.html#kits" data-close>
+                            <i class="fa fa-gears me-3 mt-1"></i>
+                            <span><strong>Automation Kits</strong><br><small>Approvals, reminders, PDFs</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="solutions.html#dash" data-close>
+                            <i class="fa fa-chart-pie me-3 mt-1"></i>
+                            <span><strong>BI Dashboards</strong><br><small>Sales/inventory/finance with alerts</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="solutions.html#assistants" data-close>
+                            <i class="fa fa-comments me-3 mt-1"></i>
+                            <span><strong>GPT Assistants</strong><br><small>Support bots, knowledge search</small></span>
+                        </a>
+                        <a class="dropdown-item py-3 d-flex align-items-start" href="solutions.html#collection" data-close>
+                            <i class="fa fa-mobile-screen me-3 mt-1"></i>
+                            <span><strong>Field Data Capture</strong><br><small>Offline-first with GPS & media</small></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="d-flex align-items-center gap-3">
-            <a class="text-reset" target="_blank" href="https://wa.me/256742699657" aria-label="WhatsApp" onclick="track('Topbar Social',{net:'whatsapp'})"><i class="fa-brands fa-whatsapp"></i></a>
-            <a class="text-reset" target="_blank" href="https://www.linkedin.com/company/bhensenterprises" aria-label="LinkedIn" onclick="track('Topbar Social',{net:'linkedin'})"><i class="fa-brands fa-linkedin"></i></a>
-            <a class="text-reset" target="_blank" href="https://x.com/BHENSENT" aria-label="Twitter" onclick="track('Topbar Social',{net:'twitter'})"><i class="fa-brands fa-x-twitter"></i></a>
+        <a class="nav-link py-2" href="work.html" data-close>Work</a>
+        <a class="nav-link py-2" href="pricing.html" data-close>Pricing</a>
+        <a class="nav-link py-2" href="faq.html" data-close>FAQ</a>
+        <a class="nav-link py-2" href="about.html" data-close>About</a>
+        <a class="nav-link py-2" href="contact.html" data-close>Contact</a>
+
+        <div class="mt-auto pt-3">
+            <a class="btn btn-outline-primary w-100 mb-2" href="contact.html#quote" data-close onclick="track('Nav CTA',{cta:'quote'})">Request Quote</a>
+            <a class="btn btn-accent w-100" href="contact.html#book" data-close onclick="track('Nav CTA',{cta:'book'})"><i class="fa fa-calendar-check me-1"></i>Book a Call</a>
         </div>
     </div>
 </div>
+
+<!-- Minimal helpers (keep near end of body or defer) -->
+<script>
+    // Close offcanvas after tapping a link (that has data-close)
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('[data-close]');
+        if (!link) return;
+        const oc = document.querySelector('#mainOffcanvas');
+        if (oc) {
+            const bsOc = bootstrap.Offcanvas.getOrCreateInstance(oc);
+            bsOc.hide();
+        }
+    });
+
+    // Compute top offset so navbar sits below topbar when fixed
+    (function setTopbarHeight() {
+        const tb = document.querySelector('.topbar');
+        if (!tb) return;
+        document.documentElement.style.setProperty('--topbar-h', tb.offsetHeight + 'px');
+    })();
+    window.addEventListener('resize', () => {
+        const tb = document.querySelector('.topbar');
+        if (tb) document.documentElement.style.setProperty('--topbar-h', tb.offsetHeight + 'px');
+    });
+</script>
+
+<!-- Quick CSS tweaks; move to your CSS file -->
+<style>
+    /* Tap target & spacing */
+    
+    .nav-link,
+    .dropdown-item {
+        padding-top: .7rem;
+        padding-bottom: .7rem;
+    }
+    
+    .navbar .btn {
+        border-radius: .75rem;
+    }
+    
+    .btn-accent {
+        background: #ffb703;
+        border-color: #ffb703;
+        color: #1a1d20;
+    }
+    
+    .btn-accent:hover {
+        filter: brightness(.95);
+    }
+    /* Desktop mega menu */
+    
+    .mega-menu {
+        width: 720px;
+        max-width: calc(100vw - 2rem);
+    }
+    
+    .mega-item {
+        display: flex;
+        align-items: flex-start;
+        gap: .75rem;
+        white-space: normal;
+    }
+    
+    .mega-icon {
+        width: 28px;
+        display: inline-flex;
+        justify-content: center;
+    }
+    
+    .mega-title {
+        display: block;
+        font-weight: 600;
+    }
+    
+    .mega-desc {
+        display: block;
+        font-size: .875rem;
+        opacity: .85;
+    }
+    /* Offcanvas: allow long menus to scroll and be comfy */
+    
+    .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+    }
+    
+    .offcanvas {
+        max-width: 88vw;
+    }
+    /* comfy width on phones */
+    
+    @media (min-width: 576px) {
+        .offcanvas {
+            max-width: 380px;
+        }
+    }
+    /* Ensure fixed navbar sits below topbar */
+    
+    .navbar.fixed-top {
+        top: var(--topbar-h, 0);
+    }
+    /* Brand dot */
+    
+    .brand-dot {
+        display: inline-block;
+        width: .45rem;
+        height: .45rem;
+        background: #ffb703;
+        border-radius: 50%;
+        margin-left: .25rem;
+    }
+    /* Improve contrast in light theme if needed */
+    
+    .navbar.bg-body {
+        backdrop-filter: saturate(150%) blur(8px);
+        background-color: rgba(255, 255, 255, .85) !important;
+    }
+    /* Reduce visual jitter on iOS when offcanvas opens */
+    
+    body.offcanvas-backdrop {
+        touch-action: none;
+    }
+</style>
